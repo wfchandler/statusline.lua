@@ -13,10 +13,10 @@ end
 -- icons       
 function M.diagnostics()
 	local diagnostics = ''
-	local e = vim.lsp.diagnostic.get(0, [[Error]])
-	local w = vim.lsp.diagnostic.get(0, [[Warning]])
-	local i = vim.lsp.diagnostic.get(0, [[Information]])
-	local h = vim.lsp.diagnostic.get(0, [[Hint]])
+	local e = vim.diagnostic.get(0, [[Error]])
+	local w = vim.diagnostic.get(0, [[Warning]])
+	local i = vim.diagnostic.get(0, [[Information]])
+	local h = vim.diagnostic.get(0, [[Hint]])
 	diagnostics = e ~= 0 and diagnostics .. ' ' .. e .. space or diagnostics
 	diagnostics = w ~= 0 and diagnostics .. ' ' .. w .. space or diagnostics
 	diagnostics = i ~= 0 and diagnostics .. '𝒊 ' .. i .. space or diagnostics
