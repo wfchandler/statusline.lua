@@ -17,10 +17,10 @@ function M.diagnostics()
 	local w = vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
 	local i = vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
 	local h = vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
-	diagnostics = e ~= 0 and diagnostics .. ' ' .. e .. space or diagnostics
-	diagnostics = w ~= 0 and diagnostics .. ' ' .. w .. space or diagnostics
-	diagnostics = i ~= 0 and diagnostics .. '𝒊 ' .. i .. space or diagnostics
-	diagnostics = h ~= 0 and diagnostics .. ' ' .. h .. space or diagnostics
+	diagnostics = e ~= 0 and diagnostics .. ' ' .. table.getn(e) .. space or diagnostics
+	diagnostics = w ~= 0 and diagnostics .. ' ' .. table.getn(w) .. space or diagnostics
+	diagnostics = i ~= 0 and diagnostics .. '𝒊 ' .. table.getn(i) .. space or diagnostics
+	diagnostics = h ~= 0 and diagnostics .. ' ' .. table.getn(h) .. space or diagnostics
 	return diagnostics
 end
 
